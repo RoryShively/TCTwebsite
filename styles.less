@@ -73,74 +73,43 @@ img.desaturate {
 // main nav
 
 header {
-  display: inline-block;
-  position: fixed;
   top: 0;
-  height: @header-height;
+  position: fixed;
   width: 100%;
-  // vertical-align: bottom;
-  color: @text-color;
-  background-color: @bgcolor;
-  font-family: century gothic;
-  font-size: 1.5em;
   z-index: 10;
-  border-bottom: 1px solid whitesmoke;
 
-  a {
-    color: @text-color;
-    font-size: 120%;
-    text-decoration: none;
+  .navbar {
+    border-radius: 0;
+    background-color: @bgcolor;
+    border: none;
+    border-bottom: 1px solid whitesmoke;
     font-family: harabara;
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-46%);
-    -ms-transform: translateY(-46%);
-    transform: translateY(-46%);
-    padding: 0 10px;
-    transition: all 0.25s ease-in-out 0s;
-    -moz-transition: all 0.25s ease-in-out 0s;
-    -webkit-transition: all 0.25s ease-in-out 0s;
-  }
 
-  a:hover {
-    color: tomato;
-  }
+    a {
+      color: @text-color !important;
+      font-size: 1.8em;
+    }
 
-  a:first-child {
-    padding-left: 0;
-  }
-
-  a:last-child {
-    padding-right: 0;
-  }
-
-  a.text-nav {
-    padding-right: 25px;
-  }
-
-  .brand {
-    float: left;
-    left: 10%;
-  }
-
-  .main-nav {
-    float: right;
-    right: 10%;
-    position: relative;
-    vertical-align: bottom;
-        top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
-
-    ul {
-      margin: 0;
+    .brand {
+      padding-top: 2px;
     }
     
-    li {
-      display: inline;
+    .navbar-right {
+      min-width: 600px;
     }
 
+    .social-media {
+      height: 50px;
+      padding-left: 10px;
+    }
+
+    .social-media a {
+      padding: 0;
+    }
+
+    .social-media img {
+      height: 45px;
+    }
   }
 }
 
@@ -204,64 +173,78 @@ header {
   margin-bottom: 20px;
 }
 
+// Footer
+
 footer {
   background-color: @bgcolor;
   display: block;
   position: relative;
   clear: both;
   border-top: 1px solid whitesmoke;
+  padding-top: 5px;
+  overflow-y: hidden;
 
   .ftsec {
-    width: 33%;
+    width: 30%;
+    margin: 0 1.5%;
     display: inline-block;
+    height: 100%;
+  }
+}
+.ftsm {
+  height: 70px;
+  background-color: #111;
+
+  .center {
+    text-align: center;
+    padding-top: 15px;
+  }
+}
+
+// Forms and Buttons
+
+form {
+  .input {
+    background: whitesmoke;
+    color: tomato;
+    font-family: harabara;
+    letter-spacing: 0.1em
   }
 
+  .button {
+    background: @bgcolor;
+    color: whitesmoke;
+  }
 }
 
-@media screen and (max-width: 900px) {
+// Responsive design for main navigation
 
+@media screen and (max-width: 768px) {
+  .navbar {
+    text-align: center;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
 
-    header {
-      position: absolute;
-    }
+  .navbar-right {
+    min-width: 100% !important;
+  }
+  
+  .social-media {
+    width: 50px;
+    display: inline-block !important;
+  }
+  
+  #main-wrapper {
+    width: 90%;
+  }
 
-    .brand {
-      clear: both;
-      top: 30% !important;
-    }
-
-    .main-nav {
-      width: 100%;
-      margin: 0 auto;
-      clear: both;
-      right: auto !important;
-      float: none !important;
-
-      vertical-align: top !important;
-      top: 22% !important;
-
-      ul li {
-        display: block;
-        text-align: center;
-      }
-
-      .social-media {
-        right: 10%;
-      }
-    }
-
-    header {
-      height: 180px;
-    }
-
-    .feature-img-wrapper {
-      margin-top: 180px;
-    }
-
-    #main-wrapper {
-      width: 90%;
-    }
+  .brand {
+    margin-left: 0 !important;
+  }
 }
+
+// Responsive design for column break point
 
 @media screen and (max-width: 650px) {
   .left-colomn {
@@ -279,6 +262,9 @@ footer {
 
     .ftsec {
       width: 100% !important;
+      text-align: center;
+      margin: 10px 0 !important;
     }
+
 }
 
