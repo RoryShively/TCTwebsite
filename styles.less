@@ -20,12 +20,19 @@
 
 /* LESS CSS */
 
+// FONTS
+
+@font-face {
+    font-family: harabara;
+    src: url(font/Harabara.ttf);
+}
+
 // background gradient and svg
 
 html {
-  -webkit-transform: translate3d(0, 0, 0);
-  -moz-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
+  // -webkit-transform: translate3d(0, 0, 0);
+  // -moz-transform: translate3d(0, 0, 0);
+  // transform: translate3d(0, 0, 0);
 }
 
 body {
@@ -133,6 +140,7 @@ header {
     li {
       display: inline;
     }
+
   }
 }
 
@@ -159,7 +167,7 @@ header {
   }
   h1 {
     margin: 0 0 0 20%;
-    display: none;
+    // display: none;
     color: @text-color;
     font-family: harabara;
     font-size: 4.5vw;
@@ -173,29 +181,104 @@ header {
 
 .left-colomn {
   float: left;
+  position: relative;
+  display: inline-block;
   width: 53%;
   padding: 1%;
   margin-right: 3%;
-  height: 500px;
+  min-height: 500px;
   background-color: @bgcolor;
   font-family: century gothic;
+  margin-bottom: 20px;
 }
 
 .right-colomn {
   float: right;
+  position: relative;
+  display: inline-block;
   padding: 1%;
   width: 40%;
-  height: 500px;
+  min-height: 500px;
   background-color: @bgcolor;
   font-family: georgia;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: @bgcolor;
+  display: block;
+  position: relative;
+  clear: both;
+  border-top: 1px solid whitesmoke;
+
+  .ftsec {
+    width: 33%;
+    display: inline-block;
+  }
+
 }
 
 @media screen and (max-width: 900px) {
-    body {
-        color: lightblue;
+
+
+    header {
+      position: absolute;
+    }
+
+    .brand {
+      clear: both;
+      top: 30% !important;
     }
 
     .main-nav {
       width: 100%;
+      margin: 0 auto;
+      clear: both;
+      right: auto !important;
+      float: none !important;
+
+      vertical-align: top !important;
+      top: 22% !important;
+
+      ul li {
+        display: block;
+        text-align: center;
+      }
+
+      .social-media {
+        right: 10%;
+      }
+    }
+
+    header {
+      height: 180px;
+    }
+
+    .feature-img-wrapper {
+      margin-top: 180px;
+    }
+
+    #main-wrapper {
+      width: 90%;
     }
 }
+
+@media screen and (max-width: 650px) {
+  .left-colomn {
+    float: none;
+    width: 100%;
+    // padding: 0;
+    margin-right: 0;
+  }
+
+  .right-colomn {
+      float: none;
+      // padding: 0;
+      width: 100%;
+    }
+
+    .ftsec {
+      width: 100% !important;
+    }
+}
+
