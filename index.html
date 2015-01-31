@@ -35,11 +35,11 @@
 	    <!-- Collect the nav links, forms, and other content for toggling -->
 	    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="#">band</a></li>
-	        <li><a href="#">shows</a></li>
-	        <li><a href="#">media</a></li>
-	        <li><a href="#">contact</a></li>
-	        <li><a href="#">merch</a></li>
+	        <li><a id="band-nav" style="color: tomato;">band</a></li>
+	        <li><a id="show-nav" style="color: whitesmoke;">shows</a></li>
+	        <li><a id="media-nav" style="color: whitesmoke;">media</a></li>
+	        <li><a id="contact-nav" style="color: whitesmoke;">contact</a></li>
+	        <li><a href="#" style="color: whitesmoke;">merch</a></li>
 	        <li class="social-media"><a href="#"><img src="img/facebook.png"></a></li>
 	        <li class="social-media"><a href="#"><img src="img/pinterest.png"></a></li>
 	        <li class="social-media"><a href="#"><img src="img/rss.png"></a></li>
@@ -58,13 +58,13 @@
 	</div>
 
 	<div class="left-colomn">
-		<section id="band">
+		<section id="band" class="toggle" style="display: block;">
 			<h2>Latest Blog Post</h2>
 			<h3>&amp; shiz go here</h3>
 			<p>lklfdkjfsldkfj sldkfjs dflkjdf lsdjf lkjdf jd kf jlsdjflk df jfd jlk fd</p>
 		</section>
 
-		<section class="shows" style="display: none;">
+		<section id="show" class="toggle" style="display: none;">
 			<h2>Show Listing</h2>
 			<p>bleh bleh bleh</p>
 			<p>bleh bleh bleh</p>
@@ -72,7 +72,7 @@
 			<p>bleh bleh bleh</p>
 		</section>
 
-		<section class="media" style="display: none;">
+		<section id="media" class="toggle" style="display: none;">
 			<h2>Media</h2>
 			<p>pic1</p>
 			<p>pic2</p>
@@ -80,7 +80,7 @@
 			<p>pic4</p>
 		</section>
 
-		<section class="contact" style="display: none;">
+		<section id="contact" class="toggle" style="display: none;">
 			<h2>Tell Us Something</h2>
 			<form>
 				<input class="input" type="text" name="email" value="email@example.com">
@@ -91,7 +91,7 @@
 
 	<aside class="right-colomn">
 		<section id="soundcloud">
-			<h3>MUZAK</h3>
+			<h2>MUZAK</h2>
 			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/27255358&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
 		</section>
 	</aside>
@@ -130,5 +130,41 @@
 </div>
 <script src="js/gradient.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		$("#band-nav").click(function() {
+			$(".toggle").attr("style", "display:none;");
+			$("#band").attr("style", "display:block;");
+			$(".navbar a").attr("style", "color:whitesmoke;");
+			$("#band-nav").attr("style", "color:tomato;");
+		});
+
+		$("#show-nav").click(function() {
+			$(".toggle").attr("style", "display:none;");
+			$("#show").attr("style", "display:block;");
+			$(".navbar a").attr("style", "color:whitesmoke;");
+			$("#show-nav").attr("style", "color:tomato;");
+		});
+
+		$("#media-nav").click(function() {
+			$(".toggle").attr("style", "display:none;");
+			$("#media").attr("style", "display:block;");
+			$(".navbar a").attr("style", "color:whitesmoke;");
+			$("#media-nav").attr("style", "color:tomato;");
+		});
+
+		$("#contact-nav").click(function() {
+			$(".toggle").attr("style", "display:none;");
+			$("#contact").attr("style", "display:block;");
+			$(".navbar a").attr("style", "color:whitesmoke;");
+			$("#contact-nav").attr("style", "color:tomato;");
+		});
+
+
+	});
+</script>
+
 </body>
 </html>

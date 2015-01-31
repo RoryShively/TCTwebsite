@@ -64,6 +64,15 @@ body {
   // background-color: rgba(255, 255, 255, 0.5)
 }
 
+// General CSS
+
+h1, h2 {
+  color: @text-color;
+  font-family: harabara;
+  text-align: center;
+  margin-top: 0;
+}
+
 img.desaturate { 
   -webkit-filter: grayscale(100%);
   -moz-filter: grayscale(100%);
@@ -86,8 +95,13 @@ header {
     font-family: harabara;
 
     a {
-      color: @text-color !important;
+      // color: @text-color !important;
       font-size: 1.8em;
+    }
+
+    a:hover {
+      color: tomato !important;
+      transition: color 0.25s ease-in-out 0;
     }
 
     .brand {
@@ -137,8 +151,6 @@ header {
   h1 {
     margin: 0 0 0 20%;
     // display: none;
-    color: @text-color;
-    font-family: harabara;
     font-size: 4.5vw;
     height: 40%;
     position: absolute;
@@ -172,6 +184,10 @@ header {
   font-family: georgia;
   margin-bottom: 20px;
 }
+
+// Sections
+
+  
 
 // Footer
 
