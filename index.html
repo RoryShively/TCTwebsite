@@ -57,11 +57,24 @@
 		<img class="feature-img desaturate" src="img/bigImg2.jpg">
 	</div>
 
-	<div class="left-colomn">
+	<div id="left-colomn">
 		<section id="band" class="toggle" style="display: block;">
-			<h2>Latest Blog Post</h2>
-			<h3>&amp; shiz go here</h3>
-			<p>lklfdkjfsldkfj sldkfjs dflkjdf lsdjf lkjdf jd kf jlsdjflk df jfd jlk fd</p>
+			<h2>Meet the Band</h2>
+			<div class="bandmate">
+				<img src="img/neat-headspace2.jpg">
+				<h3>Andy</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices tempor. Sed fermentum faucibus leo at porta. Vestibulum lobortis sagittis laoreet. Nullam nisi lorem, pretium quis ornare quis, maximus nec est. Nullam nec tincidunt massa. Ut sed sodales massa, sit amet feugiat ante. Ut tincidunt lectus sit amet lorem convallis, finibus commodo justo congue. Sed vulputate vestibulum sem, quis porta lorem vulputate cursus. Sed lectus sapien, pulvinar et felis cursus, pretium convallis nunc. Vestibulum scelerisque diam sed massa pellentesque, ut eleifend mi viverra. Nulla blandit quis ipsum eu lobortis.</p>
+			</div>
+			<div class="bandmate">
+				<img src="img/neat-headspace2.jpg">
+				<h3>Nathan</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices tempor. Sed fermentum faucibus leo at porta. Vestibulum lobortis sagittis laoreet. Nullam nisi lorem, pretium quis ornare quis, maximus nec est. Nullam nec tincidunt massa. Ut sed sodales massa, sit amet feugiat ante. Ut tincidunt lectus sit amet lorem convallis, finibus commodo justo congue. Sed vulputate vestibulum sem, quis porta lorem vulputate cursus. Sed lectus sapien, pulvinar et felis cursus, pretium convallis nunc. Vestibulum scelerisque diam sed massa pellentesque, ut eleifend mi viverra. Nulla blandit quis ipsum eu lobortis.</p>
+			</div>
+			<div class="bandmate">
+				<img src="img/neat-headspace2.jpg">
+				<h3>Robert</h3>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam consequat ultrices tempor. Sed fermentum faucibus leo at porta. Vestibulum lobortis sagittis laoreet. Nullam nisi lorem, pretium quis ornare quis, maximus nec est. Nullam nec tincidunt massa. Ut sed sodales massa, sit amet feugiat ante. Ut tincidunt lectus sit amet lorem convallis, finibus commodo justo congue. Sed vulputate vestibulum sem, quis porta lorem vulputate cursus. Sed lectus sapien, pulvinar et felis cursus, pretium convallis nunc. Vestibulum scelerisque diam sed massa pellentesque, ut eleifend mi viverra. Nulla blandit quis ipsum eu lobortis.</p>
+			</div>
 		</section>
 
 		<section id="show" class="toggle" style="display: none;">
@@ -102,7 +115,7 @@
 		</section>
 	</div>
 
-	<aside class="right-colomn">
+	<aside id="right-colomn">
 		<section id="soundcloud">
 			<h2>MUZAK</h2>
 			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/27255358&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
@@ -122,8 +135,8 @@
 	</div>
 	<div class="ftsec">
 		<form>
-			<input class="input" type="text" name="email" value="email@example.com">
-			<input class="button" type="submit" value="Submit">
+			<input class="input ccformfield" type="text" name="email" value="email@example.com">
+			<input class="button ccbtn" type="submit" value="Submit">
 		</form>
 		<h3>Sign up for our newsletter!</h3>
 		<h4>Get info on upcoming shows</h4>
@@ -174,9 +187,63 @@
 			$(".navbar a").attr("style", "color:whitesmoke;");
 			$("#contact-nav").attr("style", "color:tomato;");
 		});
-
-
 	});
+</script>
+
+<!-- move at 72
+ -->
+<script>
+	$().ready(function() {
+		var $scrollingDiv = $("#right-colomn");
+		var $leftcolheight = $("#left-colomn").height();
+		var $rightcolheight = $("#right-colomn").height();
+
+		var $leftfromtop = $("#left-colomn").offset().top;
+		var $rightfromtop = $("#right-colomn").offset().top;
+
+		var $window = $(window);
+		
+ 		var $scroll = $window.scrollTop()
+ 		var $start = ($leftfromtop - 92)
+		// alert($leftfromtop);
+		// alert($rightfromtop);
+		// alert($leftfrombottom);
+		// alert($rightfrombottom);
+		$document = $(document)
+
+
+
+		$document.scroll(function() {
+			var $scroll = $document.scrollTop();
+ 			var $start = ($leftfromtop - 92);
+ 			var $stop = ($start + $leftcolheight - $rightcolheight);
+
+ 			console.log($scroll);
+ 			
+
+
+	        if (($scroll > $start) && ($scroll < $stop)) {
+	            $scrollingDiv.stop().animate({
+	                marginTop: $window.scrollTop() - $rightfromtop + 100
+	            });
+	        } 
+	          else {
+	            $scrollingDiv.finish()
+	            // .animate({
+	            //     marginTop: 0
+	            // });
+	        }
+
+	        if ($scroll < $start) {
+	            $scrollingDiv.finish().animate({
+	                marginTop: 0
+	            });
+	        } 
+	    });
+  				
+       				
+	});
+		
 </script>
 
 </body>

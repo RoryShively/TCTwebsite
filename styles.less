@@ -163,7 +163,7 @@ header {
 
 
 
-.left-colomn {
+#left-colomn {
   float: left;
   position: relative;
   display: inline-block;
@@ -176,7 +176,7 @@ header {
   margin-bottom: 20px;
 }
 
-.right-colomn {
+#right-colomn {
   float: right;
   position: relative;
   display: inline-block;
@@ -186,11 +186,30 @@ header {
   background-color: @bgcolor;
   font-family: georgia;
   margin-bottom: 20px;
+  margin-top: 0;
 }
 
 // Sections
 
-  
+
+#band {
+  text-align: center;
+
+  .bandmate {
+    padding: 20px 0;
+    border-top: solid 1px whitesmoke;
+
+    img {
+      width: 80%;
+      margin: 0 auto;
+      display: block;
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+}
 
 // Footer
 
@@ -225,32 +244,29 @@ footer {
 form {
   .input {
     background: whitesmoke;
-    color: tomato;
-    font-family: harabara;
-    letter-spacing: 0.1em
-  }
-
-  .button {
-    background: @bgcolor;
-    color: whitesmoke;
+    color: grey;
+    width: 50%
   }
 }
 
 .ccformfield {
-  margin: 10px 5%;
-  width: 90%;
+  margin: 10px 0%;
+  width: 100%;
   border: solid 1px @bgcolor;
+  border-radius: 5px;
 
   &:hover {
     -moz-box-shadow:    inset 0 0 15px teal;
     -webkit-box-shadow: inset 0 0 15px teal;
     box-shadow:         inset 0 0 15px teal;
+    transition: all 0.25s ease-in-out 0;
   }
 
   &:focus {
     -moz-box-shadow:    inset 0 0 15px teal;
     -webkit-box-shadow: inset 0 0 15px teal;
     box-shadow:         inset 0 0 15px teal;
+    transition: all 0.25s ease-in-out 0;
   }
 }
 
@@ -260,6 +276,7 @@ form {
 
 .ccfield-prepend {
   text-align: center;
+  margin: 0 5%;
 }
 
 // Responsive design for main navigation
