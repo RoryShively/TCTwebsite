@@ -231,15 +231,21 @@
 	            $('#right-colomn').removeClass('fixed');
 	        }
 
-	        if(($scroll > $stop) && ($viewport > 650)) {
+	        if(($scroll > $stop) && ($viewport > 650) && ($leftcolheight < 800)) {
 	        	$('#right-colomn').addClass('fixed-bottom');
-	        	$('#right-colomn').css("top", ($stop + 92));
+	        	$('#right-colomn').css("top", ($stop + 86));
 	        }
 	          else {
 	            $('#right-colomn').removeClass('fixed-bottom');
 	            $('#right-colomn').css("top", "14%");
 	        }
 
+	        if(($leftcolheight < 800)) {
+	        	$('#right-colomn').css("position", relative);
+	        	$('#right-colomn').removeClass('fixed');
+	        	$('#right-colomn').removeClass('fixed-bottom');
+	        }
+	       
 	    });
   				
        				
