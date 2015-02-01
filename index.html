@@ -82,10 +82,23 @@
 
 		<section id="contact" class="toggle" style="display: none;">
 			<h2>Tell Us Something</h2>
-			<form>
-				<input class="input" type="text" name="email" value="email@example.com">
-				<input class="button" type="submit" value="Submit">
-			</form>
+			    <form method="post" action="" class="ccform">
+				    <div class="ccfield-prepend">
+				        <input class="ccformfield" type="text" placeholder="Full Name" required>
+				    </div>
+				    <div class="ccfield-prepend">
+				        <input class="ccformfield" type="text" placeholder="Email" required>
+				    </div>
+				    <div class="ccfield-prepend">
+				        <input class="ccformfield" type="text" placeholder="Subject" required>
+				    </div>
+				    <div class="ccfield-prepend">
+				        <textarea class="ccformfield" name="comments" rows="8" placeholder="Message" required></textarea>
+				    </div>
+				    <div class="ccfield-prepend">
+				        <input class="ccbtn" type="submit" value="Submit">
+				    </div>
+			    </form>
 		</section>
 	</div>
 
