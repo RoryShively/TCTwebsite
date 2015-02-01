@@ -214,31 +214,32 @@
 
 
 		$document.scroll(function() {
+			var $document = $(document);
 			var $scroll = $document.scrollTop();
  			var $start = ($leftfromtop - 92);
+ 			var $leftcolheight = $("#left-colomn").height();
+			var $rightcolheight = $("#right-colomn").height();
  			var $stop = ($start + $leftcolheight - $rightcolheight);
-
- 			console.log($scroll);
+ 			var $viewport = window.innerWidth || $(window).width();
  			
 
 
-	        if (($scroll > $start) && ($scroll < $stop)) {
-	            $scrollingDiv.stop().animate({
-	                marginTop: $window.scrollTop() - $rightfromtop + 100
-	            });
+	        if (($scroll > $start) && ($scroll < $stop) && ($viewport > 650)) {
+	            $('#right-colomn').addClass('fixed');
 	        } 
 	          else {
-	            $scrollingDiv.finish()
-	            // .animate({
-	            //     marginTop: 0
-	            // });
+	            $('#right-colomn').removeClass('fixed');
 	        }
 
-	        if ($scroll < $start) {
-	            $scrollingDiv.finish().animate({
-	                marginTop: 0
-	            });
-	        } 
+	        if(($scroll > $stop) && ($viewport > 650)) {
+	        	$('#right-colomn').addClass('fixed-bottom');
+	        	$('#right-colomn').css("top", ($stop + 92));
+	        }
+	          else {
+	            $('#right-colomn').removeClass('fixed-bottom');
+	            $('#right-colomn').css("top", "14%");
+	        }
+
 	    });
   				
        				
