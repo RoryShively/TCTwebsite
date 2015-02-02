@@ -154,104 +154,11 @@
 </div>
 <div class="gradient">
 </div>
+
 <script src="js/gradient.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
-
-<script>
-	$(document).ready(function() {
-
-		$("#band-nav").click(function() {
-			$(".toggle").attr("style", "display:none;");
-			$("#band").attr("style", "display:block;");
-			$(".navbar a").attr("style", "color:whitesmoke;");
-			$("#band-nav").attr("style", "color:tomato;");
-		});
-
-		$("#show-nav").click(function() {
-			$(".toggle").attr("style", "display:none;");
-			$("#show").attr("style", "display:block;");
-			$(".navbar a").attr("style", "color:whitesmoke;");
-			$("#show-nav").attr("style", "color:tomato;");
-		});
-
-		$("#media-nav").click(function() {
-			$(".toggle").attr("style", "display:none;");
-			$("#media").attr("style", "display:block;");
-			$(".navbar a").attr("style", "color:whitesmoke;");
-			$("#media-nav").attr("style", "color:tomato;");
-		});
-
-		$("#contact-nav").click(function() {
-			$(".toggle").attr("style", "display:none;");
-			$("#contact").attr("style", "display:block;");
-			$(".navbar a").attr("style", "color:whitesmoke;");
-			$("#contact-nav").attr("style", "color:tomato;");
-		});
-	});
-</script>
-
-<!-- move at 72
- -->
-<script>
-	$().ready(function() {
-		var $scrollingDiv = $("#right-colomn");
-		var $leftcolheight = $("#left-colomn").height();
-		var $rightcolheight = $("#right-colomn").height();
-
-		var $leftfromtop = $("#left-colomn").offset().top;
-		var $rightfromtop = $("#right-colomn").offset().top;
-
-		var $window = $(window);
-		
- 		var $scroll = $window.scrollTop()
- 		var $start = ($leftfromtop - 92)
-		// alert($leftfromtop);
-		// alert($rightfromtop);
-		// alert($leftfrombottom);
-		// alert($rightfrombottom);
-		$document = $(document)
-
-
-
-		$document.scroll(function() {
-			var $document = $(document);
-			var $scroll = $document.scrollTop();
- 			var $start = ($leftfromtop - 92);
- 			var $leftcolheight = $("#left-colomn").height();
-			var $rightcolheight = $("#right-colomn").height();
- 			var $stop = ($start + $leftcolheight - $rightcolheight);
- 			var $viewport = window.innerWidth || $(window).width();
- 			
-
-
-	        if (($scroll > $start) && ($scroll < $stop) && ($viewport > 650)) {
-	            $('#right-colomn').addClass('fixed');
-	        } 
-	          else {
-	            $('#right-colomn').removeClass('fixed');
-	        }
-
-	        if(($scroll > $stop) && ($viewport > 650) && ($leftcolheight < 800)) {
-	        	$('#right-colomn').addClass('fixed-bottom');
-	        	$('#right-colomn').css("top", ($stop + 86));
-	        }
-	          else {
-	            $('#right-colomn').removeClass('fixed-bottom');
-	            $('#right-colomn').css("top", "14%");
-	        }
-
-	        if(($leftcolheight < 800)) {
-	        	$('#right-colomn').css("position", relative);
-	        	$('#right-colomn').removeClass('fixed');
-	        	$('#right-colomn').removeClass('fixed-bottom');
-	        }
-	       
-	    });
-  				
-       				
-	});
-		
-</script>
+<script src="js/navigation.js"></script>
+<script src="js/scrolling-aside.js"></script>
 
 </body>
 </html>
