@@ -210,7 +210,6 @@ header {
 
   .bandmate {
     padding: 20px 0;
-    border-top: solid 1px whitesmoke;
 
     img {
       width: 80%;
@@ -226,16 +225,22 @@ header {
 
 #show {
 
+  .show-listing:nth-child(2n) {  
+    background-color: #ccc;
+}
+
   .show-listing {
-    background-color: white;
+    background-color: tomato;
     width:100%;
     height: 85px;
     margin: 7px 0;
 
     .when {
       background-color: whitesmoke;
-      width: 25%;
+      -webkit-box-shadow: 10px 0 5px -2px #888;
+      box-shadow: 4px 0 10px -2px #888;
       float: left;
+      width: 25%;
       height: 100%;
       color: #222;
       text-align: center;
@@ -268,7 +273,6 @@ header {
     }
 
     .where {
-      background-color: tomato;
       width: 75%;
       float: left;
       height: 100%;

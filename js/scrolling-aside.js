@@ -1,22 +1,6 @@
 $().ready(function() {
-    var $scrollingDiv = $("#right-colomn");
-    var $leftcolheight = $("#left-colomn").height();
-    var $rightcolheight = $("#right-colomn").height();
 
-    var $leftfromtop = $("#left-colomn").offset().top;
-    var $rightfromtop = $("#right-colomn").offset().top;
-
-    var $window = $(window);
-    
-    var $scroll = $window.scrollTop()
-    var $start = ($leftfromtop - 92)
-    // alert($leftfromtop);
-    // alert($rightfromtop);
-    // alert($leftfrombottom);
-    // alert($rightfrombottom);
     $document = $(document)
-
-
 
     $document.scroll(function() {
       var $document = $(document);
@@ -27,8 +11,6 @@ $().ready(function() {
       var $rightcolheight = $("#right-colomn").height();
       var $stop = ($start + $leftcolheight - $rightcolheight);
       var $viewport = window.innerWidth || $(window).width();
-      
-      console.log($leftcolheight);
 
 
           if (($scroll > $start) && ($scroll < $stop) && ($viewport > 650)) {
@@ -54,6 +36,5 @@ $().ready(function() {
           }
          
       });
-          
-              
+                    
 });
