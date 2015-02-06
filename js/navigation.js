@@ -6,6 +6,7 @@
       $(".navbar a").attr("style", "color:whitesmoke;");
       $("#band-nav").attr("style", "color:tomato;");
       $(".navbar-collapse").collapse('hide');
+
     });
 
     $("#show-nav").click(function() {
